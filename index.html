@@ -65,12 +65,14 @@
     .tag{padding:10px 14px;border-radius:999px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);color:var(--muted);font-size:14px}
     .hero-note{display:block;margin:-6px 0 22px;color:#c8deee;font-size:14px;letter-spacing:.02em}
     .hero-summary{
-      display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;
-      max-width:720px;margin-top:24px
+      display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;
+      max-width:720px;margin:24px auto 0;
+      justify-content:center
     }
     .hero-stat{
       padding:18px 18px 16px;border-radius:22px;background:linear-gradient(180deg,rgba(15,30,45,.92),rgba(8,18,29,.94));
-      border:1px solid rgba(255,255,255,.08);box-shadow:var(--shadow)
+      border:1px solid rgba(255,255,255,.08);box-shadow:var(--shadow);
+      display:flex;flex-direction:column;align-items:center;text-align:center
     }
     .hero-stat small{
       display:block;margin-bottom:8px;color:var(--blue);font-size:11px;letter-spacing:.08em;text-transform:uppercase
@@ -294,9 +296,9 @@
     .head h2{font-size:clamp(2rem,4vw,3.2rem);line-height:1;text-transform:uppercase}
     .head p{margin:0;color:var(--muted);font-size:18px;line-height:1.72}
     .grid3,.grid2,.emergency,.metrics,.demo{display:grid;gap:18px}
-    .grid3{grid-template-columns:repeat(3,minmax(0,1fr))}
+    .grid3{grid-template-columns:repeat(4,minmax(0,1fr))}
     .grid2{grid-template-columns:minmax(0,1.08fr) minmax(320px,.92fr)}
-    .metrics{grid-template-columns:repeat(3,minmax(0,1fr));margin-top:22px}
+    .metrics{grid-template-columns:repeat(4,minmax(0,1fr));margin-top:22px}
     .emergency{grid-template-columns:repeat(4,minmax(0,1fr))}
     .demo{grid-template-columns:minmax(0,1.05fr) minmax(280px,.95fr);align-items:center}
     .panel{
@@ -360,6 +362,8 @@
       display:block;height:100%;width:var(--size,50%);border-radius:999px;
       background:linear-gradient(90deg,var(--teal),var(--amber))
     }
+    .cost-row > div:nth-child(2){text-align:center}
+    .cost-row > div:nth-child(3){text-align:right}
     .phase-list{display:grid;gap:10px}
     .phase-item{
       display:flex;justify-content:space-between;align-items:center;padding:12px 14px;border-radius:16px;
@@ -501,7 +505,7 @@
     .alert-node small{display:block;margin-bottom:6px;color:var(--blue);font-size:11px;letter-spacing:.08em;text-transform:uppercase}
     .alert-node b{display:block;margin-bottom:8px;font-size:16px}
     .alert-node span{display:block;color:var(--muted);font-size:13px;line-height:1.6}
-    .cost-summary{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-bottom:18px}
+    .cost-summary{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;margin-bottom:18px}
     .cost-chip{
       padding:22px;border-radius:24px;background:linear-gradient(180deg,rgba(15,30,45,.94),rgba(8,18,29,.96));
       border:1px solid rgba(255,255,255,.08);box-shadow:var(--shadow)
@@ -513,20 +517,28 @@
       overflow:hidden;border-radius:26px;background:linear-gradient(180deg,rgba(15,30,45,.94),rgba(8,18,29,.96));
       border:1px solid rgba(255,255,255,.08);box-shadow:var(--shadow)
     }
-    .cost-head,.cost-row{
-      display:grid;grid-template-columns:minmax(180px,1.4fr) 90px 150px minmax(180px,1.3fr);gap:16px;align-items:center
-    }
-    .cost-head{
-      padding:18px 22px;background:rgba(255,255,255,.04);color:var(--blue);font-size:12px;letter-spacing:.08em;text-transform:uppercase
-    }
     .cost-row{
-      padding:18px 22px;border-top:1px solid rgba(255,255,255,.07)
+      display:grid;grid-template-columns:minmax(200px,1.5fr) 80px 120px 1fr;gap:16px;align-items:center;
+      padding:16px 22px;border-bottom:1px solid rgba(255,255,255,.04)
     }
+    .cost-row:first-child{border-top:1px solid rgba(255,255,255,.04)}
+    .cost-head{
+      padding:18px 22px;background:rgba(255,255,255,.04);color:var(--blue);font-size:12px;letter-spacing:.08em;text-transform:uppercase;
+      display:grid;grid-template-columns:minmax(200px,1.5fr) 80px 120px 1fr;gap:16px;align-items:center
+    }
+    .cost-head > div:nth-child(2){text-align:center}
+    .cost-head > div:nth-child(3){text-align:right}
     .cost-row b{font-size:16px}
     .cost-row span,.cost-row small{color:var(--muted);line-height:1.6}
     .cost-row.total{background:rgba(9,192,174,.07)}
     .cost-row.total b{color:#fff}
-    .team-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
+    .cost-item{
+      display:flex;align-items:center;gap:12px
+    }
+    .cost-item img{
+      width:80px;height:80px;border-radius:12px;object-fit:cover;border:1px solid rgba(255,255,255,.1)
+    }
+    .team-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
     .team-card{
       position:relative;padding:22px;border-radius:24px;background:linear-gradient(180deg,rgba(15,30,45,.94),rgba(8,18,29,.96));
       border:1px solid rgba(255,255,255,.08);box-shadow:var(--shadow);overflow:hidden
@@ -536,9 +548,13 @@
       background:radial-gradient(circle,rgba(9,192,174,.14),transparent 70%)
     }
     .team-avatar{
-      width:58px;height:58px;border-radius:18px;display:grid;place-items:center;margin-bottom:18px;
+      width:240px;height:240px;border-radius:24px;display:grid;place-items:center;margin-bottom:18px;
       background:linear-gradient(135deg,rgba(9,192,174,.3),rgba(123,220,255,.16));
-      font:700 20px/1 "Bahnschrift","Trebuchet MS",sans-serif;color:#fff
+      font:700 20px/1 "Bahnschrift","Trebuchet MS",sans-serif;color:#fff;
+      overflow:hidden
+    }
+    .team-avatar img{
+      width:100%;height:100%;object-fit:cover;border-radius:24px
     }
     .team-card h3{margin:0 0 6px;font-size:22px;line-height:1.08}
     .team-role{
@@ -616,32 +632,23 @@
           navbatni baholaydi, maxsus transport uchun ustuvor yo'l yaratadi va deformatsiya, yong'in
           hamda uzoq to'xtab qolgan transport bo'yicha erta ogohlantirish beradigan aqlli boshqaruv tizimini taklif qiladi.
         </p>
-        <span class="hero-note">Bitta sahifada demo, AI stsenariylari, smeta va jamoa taqdimoti jamlangan.</span>
         <div class="actions">
-          <a class="btn btn-secondary" href="#xarajatlar">Smetani ko'rish</a>
-        </div>
-        <div class="tags">
-          <div class="tag">YOLO orqali aniqlash</div>
-          <div class="tag">Deformatsiya nazorati</div>
-          <div class="tag">Yong'in alerti</div>
-          <div class="tag">Harakatsiz transport</div>
-          <div class="tag">Maxsus transport</div>
         </div>
         <div class="hero-summary">
           <div class="hero-stat">
-            <small>AI modullar</small>
-            <b>3+</b>
-            <span>Navbat tahlili, xavfli holat va maxsus transport ustuvorligi bir tizimda ishlaydi.</span>
+            <small>AI algoritmlar</small>
+            <b>10+</b>
+            <span>Navbat tahlili, yo'l tahlili va xavfli holat va maxsus transport ustuvorligini hisobga olib ishlaydi.</span>
           </div>
           <div class="hero-stat">
-            <small>Demo format</small>
-            <b>2-4</b>
-            <span>Kamera oqimi bilan sinov, keyin esa controller integratsiyasiga o'tish mumkin.</span>
+            <small>Chorraha Vazifalari</small>
+            <b>4</b>
+            <span>Kamera oqimini hisob kitib qilish, Yong'in aniqlash, Avariyani aniqlash, Uzoq vaqt turib qolgan mashinani aniqlash, Tezkor xizmat mashinalariga ustunlik qilish.</span>
           </div>
           <div class="hero-stat">
-            <small>Boshlang'ich smeta</small>
-            <b>14-19 mln</b>
-            <span>Minimal demo konfiguratsiyasi uchun hisoblangan tezkor byudjet oralig'i.</span>
+            <small>Smeta</small>
+            <b>6-7 mln</b>
+            <span>Minimal chiqim uchun hisoblangan tezkor byudjet oralig'i.</span>
           </div>
         </div>
       </div>
@@ -664,9 +671,12 @@
         <p>Hozirgi ko'plab svetoforlar oldindan belgilangan vaqt bo'yicha ishlaydi. Lekin real transport oqimi doim o'zgaradi. Natijada bir yo'nalishda navbat oshadi, boshqa tomonda esa yo'l bo'sh turadi.</p>
       </div>
       <div class="grid3">
-        <article class="panel"><h3>Samarasiz signal</h3><p>Svetofor vaqt asosida ishlaganda real holat hisobga olinmaydi va kutish vaqti ortib ketadi. Bu esa bekor turgan transportdan ko'proq zararli gaz chiqishiga va ekologik zarar oshishiga olib keladi.</p></article>
-        <article class="panel"><h3>Tirbandlik kuchayadi</h3><p>Ko'p mashina to'plangan yo'nalish uzoq kutadi, bu esa butun chorrahaning o'tkazuvchanligini pasaytiradi.</p></article>
-        <article class="panel"><h3>Maxsus mashinalar kechikadi</h3><p>Tez yordam yoki yong'in o'chirish mashinasi oddiy transport bilan bir xil navbatga tushib qoladi. Aqlli chorrahada esa maxsus transport sirenasi aniqlanib, svetofor boshqariladi, ya'ni boshqa oqimga qizil chiroq berilib maxsus transport chorrahani xavfsiz kesib o'tadi.</p></article>
+        <article class="panel">
+          <img src="assets/images/probka.jpg" alt="Samarasiz signal" style="width:100%;border-radius:16px;margin-bottom:16px;object-fit:cover;height:160px">
+          <h3>Samarasiz signal</h3><p></p>
+        </article>
+        <article class="panel"><h3>Tirbandlik kuchayadi</h3><p></p></article>
+        <article class="panel"><h3>Maxsus mashinalar kechikadi</h3><p></p></article>
       </div>
     </section>
 
@@ -715,10 +725,10 @@
             <img src="assets/images/image_2.png" alt="Deformatsiya bo'lgan mashina rasmi">
           </div>
           <h3>Deformatsiya bo'lgan mashina</h3>
-          <p>Kamera kuzov shakli buzilgan, zarba izi ko'ringan yoki old-qismi ezilgan transportni alohida xavf sifatida belgilaydi.</p>
+          <p></p>
           <div class="alert-meta">
-            <small>Natija</small>
-            <b>Avariya ehtimoli va ustuvor tekshiruv</b>
+            <small></small>
+            <b></b>
           </div>
         </article>
 
@@ -731,10 +741,10 @@
             <img src="assets/images/image_3.png" alt="To'xtab qolgan transport uchun ogohlantiruvchi svetofor belgisi">
           </div>
           <h3>Bir joyda ko'p vaqt turib qolgan transport</h3>
-          <p>Tracking ID orqali mashina qancha vaqt qimirlamaganini o'lchab, kritik zonada uzoq turishni avtomatik trigger qiladi.</p>
+          <p></p>
           <div class="alert-meta">
-            <small>Natija</small>
-            <b>To'siq va tirbandlik xavfi bo'yicha ogohlantirish</b>
+            <small></small>
+            <b></b>
           </div>
         </article>
 
@@ -747,10 +757,10 @@
             <img src="assets/images/image_4.jpeg" alt="Yong'in aniqlangan mashina rasmi">
           </div>
           <h3>Yong'in va tutun alomatlari</h3>
-          <p>Kadrda alanga, tutun yoki keskin issiqlik/fonar effektiga o'xshash xavfli vizual signal ko'rinsa, tizim favqulodda holat sifatida belgilaydi.</p>
+          <p></p>
           <div class="alert-meta">
-            <small>Natija</small>
-            <b>Yong'in xavfi bo'yicha zudlik bilan alert</b>
+            <small></small>
+            <b></b>
           </div>
         </article>
       </div>
@@ -776,85 +786,13 @@
         <p>Maxsus transport yaqinlashganda tizim chorrahani xavfsiz bo'shatib, unga ustuvor yo'l yaratadi.</p>
       </div>
       <div class="emergency">
-        <article class="step"><b>1</b><h3>Sirena aniqlash</h3><p>Mikrofon yoki audio modul maxsus transport sirenasini aniqlaydi va signal beradi.</p></article>
-        <article class="step"><b>2</b><h3>Yo'nalishni topish</h3><p>Kamera qaysi tomondan maxsus transport kelayotganini aniqlash yoki tasdiqlash uchun ishlatiladi.</p></article>
-        <article class="step"><b>3</b><h3>Barchasi qizil</h3><p>Chorraha bir necha soniyaga qizil rejimga o'tadi va ichidagi transport xavfsiz chiqib ketadi.</p></article>
+        <article class="step"><b>1</b><h3>Sirena aniqlash</h3><p></p></article>
+        <article class="step"><b>2</b><h3>Yo'nalishni topish</h3><p></p></article>
+        <article class="step"><b>3</b><h3>Barchasi qizil</h3><p></p></article>
       </div>
     </section>
 
-    <section id="dispatch" class="reveal">
-      <div class="head">
-        <span>Favqulodda nazorat</span>
-        <h2>Favqulodda ogohlantirish zanjiri</h2>
-        <p>Deformatsiya, yong'in yoki uzoq to'xtab qolgan transport aniqlansa, tizim hodisani tasdiqlab, snapshot va ustuvor xabar ko'rinishida dispecherga yuboradi.</p>
-      </div>
-      <div class="alert-grid">
-        <article class="alert-card">
-          <div class="alert-top">
-            <div class="alert-num">1</div>
-            <div class="alert-tag">Yo'l xavfi</div>
-          </div>
-          <div class="alert-icon damage"></div>
-          <h3>Deformatsiya yoki uzoq to'xtash</h3>
-          <p>Avariya oqibatida kuzovi shikastlangan yoki muhim zonada normadan ortiq turib qolgan transport alohida xavf sifatida belgilanadi.</p>
-          <div class="alert-meta">
-            <small>Trigger</small>
-            <b>Kontur o'zgarishi + harakatsiz vaqt</b>
-          </div>
-        </article>
-
-        <article class="alert-card">
-          <div class="alert-top">
-            <div class="alert-num">2</div>
-            <div class="alert-tag">Yong'in nazorati</div>
-          </div>
-          <div class="alert-icon fire"></div>
-          <h3>Yong'in va tutun xavfi</h3>
-          <p>Kamera alanga, tutun yoki keskin yorug'lik kabi xavf alomatlarini ko'rsa, tizim voqeani favqulodda ogohlantirishga aylantiradi.</p>
-          <div class="alert-meta">
-            <small>Trigger</small>
-            <b>Tutun, alanga va xavfli vizual signal</b>
-          </div>
-        </article>
-
-        <article class="alert-card">
-          <div class="alert-top">
-            <div class="alert-num">3</div>
-            <div class="alert-tag">Dispecher markazi</div>
-          </div>
-          <div class="alert-icon dispatch"></div>
-          <h3>Dispecherga darhol yuborish</h3>
-          <p>Tizim aniqlangan holatni kadr, vaqt, joylashuv va xavf turi bilan birga dispecher paneliga uzatadi.</p>
-          <div class="alert-meta">
-            <small>Natija</small>
-            <b>Tezkor xabar, snapshot va lokatsiya</b>
-          </div>
-        </article>
-      </div>
-
-      <div class="alert-strip">
-        <div class="alert-node">
-          <small>1-bosqich</small>
-          <b>Kamera kuzatadi</b>
-          <span>Yo'l oqimi, xavfli zona va harakatlanmay qolgan obyektlar doimiy tahlil qilinadi.</span>
-        </div>
-        <div class="alert-node">
-          <small>2-bosqich</small>
-          <b>Xavf tasdiqlanadi</b>
-          <span>Deformatsiya, uzoq to'xtash yoki yong'in alomati aniqlansa, tizim hodisa turini belgilaydi.</span>
-        </div>
-        <div class="alert-node">
-          <small>3-bosqich</small>
-          <b>Vaziyat saqlanadi</b>
-          <span>Hodisaning kadr tasviri, joylashuvi va aniqlangan vaqti bir paketga yig'iladi.</span>
-        </div>
-        <div class="alert-node">
-          <small>4-bosqich</small>
-          <b>Dispecherga yuboriladi</b>
-          <span>Operator zudlik bilan ogohlantirish oladi va kerakli xizmatni voqea joyiga yo'naltiradi.</span>
-        </div>
-      </div>
-    </section>
+  
 
     <section class="reveal">
       <div class="head">
@@ -863,10 +801,10 @@
         <p>Ushbu tizim shahar transporti uchun real foyda yaratadi: tirbandlikni kamaytiradi, kutish vaqtini qisqartiradi va favqulodda holatlarda inson hayotini saqlashga yordam beradi.</p>
       </div>
       <div class="grid3">
-        <article class="panel"><h3>Tirbandlik kamayadi</h3><p>Navbat ko'p tomonga ko'proq vaqt berish orqali chorrahaning o'tkazuvchanligi oshadi.</p></article>
-        <article class="panel"><h3>Haydovchi vaqti tejaladi</h3><p>Transport real vaziyatga mos boshqarilgani uchun keraksiz kutish kamroq bo'ladi.</p></article>
-        <article class="panel"><h3>Maxsus mashinalar ustuvorlik oladi</h3><p>Tez yordam va boshqa maxsus transport chorrahani tezroq kesib o'tish imkoniga ega bo'ladi.</p></article>
-        <article class="panel"><h3>Xavfli hodisa erta ko'rinadi</h3><p>Deformatsiya, yong'in va to'siq bo'lib qolgan mashina operatorga kechikmasdan ko'rinadi.</p></article>
+        <article class="panel"><h3>Tirbandlik kamayadi</h3><p></p></article>
+        <article class="panel"><h3>Haydovchi vaqti tejaladi</h3><p></p></article>
+        <article class="panel"><h3>Maxsus mashinalar ustuvorlik oladi</h3><p></p></article>
+        <article class="panel"><h3>Ekologiya tozalanadi</h3><p></p></article>
        </div>
     </section>
 
@@ -877,23 +815,7 @@
         <p>Quyidagi jadval taqdimot va boshlang'ich sinov uchun soddalashtirilgan konfiguratsiyani ko'rsatadi. To'liq tizim keyin bosqichma-bosqich kengaytiriladi.</p>
       </div>
 
-      <div class="cost-summary">
-        <div class="cost-chip">
-          <small>Minimal demo</small>
-          <b>14-19 mln</b>
-          <span>2 ta kamera va arzon AI qurilma bilan boshlang'ich model.</span>
-        </div>
-        <div class="cost-chip">
-          <small>Pilot variant</small>
-          <b>18-24 mln</b>
-          <span>Stabil montaj va ko'proq himoya bilan amaliy sinov uchun.</span>
-        </div>
-        <div class="cost-chip">
-          <small>Kengaytirilgan variant</small>
-          <b>24-29 mln</b>
-          <span>Sirena moduli va qo'shimcha integratsiya bosqichma-bosqich qo'shiladi.</span>
-        </div>
-      </div>
+
 
       <div class="cost-board">
         <div class="cost-head">
@@ -903,58 +825,64 @@
           <div>Izoh</div>
         </div>
         <div class="cost-row">
-          <b>Kamera</b>
-          <span>2 ta</span>
-          <span>$258</span>
-          <small>Asosiy kirish va chiqish yo'nalishlarini kuzatish uchun</small>
+          <div class="cost-item">
+            <img src="assets/images/kamera.png" alt="Hikvision IP kamera">
+            <b>Hikvision IP kamera</b>
+          </div>
+          <span>4 ta</span>
+          <span>$100</span>
+          <small>DS-2CD1023G0E-I 2MP, 2.8mm obyektiv, IP67</small>
         </div>
         <div class="cost-row">
-          <b>AI qurilma</b>
+          <div class="cost-item">
+            <img src="assets/images/Raspberry_Pi_4_Model_B_-_Side.jpg" alt="Raspberry Pi 4">
+            <b>Raspberry Pi 4</b>
+          </div>
           <span>1 ta</span>
-          <span>$249</span>
-          <small>Demo uchun arzon edge AI qurilma</small>
+          <span>$65</span>
+          <small>4GB Model B, AI protsessor sifatida</small>
         </div>
         <div class="cost-row">
-          <b>PoE switch</b>
+          <div class="cost-item">
+            <img src="assets/images/dvr.jpg" alt="Hikvision NVR">
+            <b>Hikvision NVR</b>
+          </div>
           <span>1 ta</span>
-          <span>$109</span>
-          <small>Kameralarni ulash uchun</small>
-        </div>
-        <div class="cost-row">
-          <b>Kabel va himoya</b>
-          <span>1 to'plam</span>
           <span>$120</span>
+          <small>DS-7116HGHI-M1, 16 kanal, H.265+</small>
+        </div>
+        <div class="cost-row">
+          <div class="cost-item">
+            <img src="assets/images/kabel.jpg" alt="Kabel va himoya">
+            <b>Kabel va himoya</b>
+          </div>
+          <span>1 to'plam</span>
+          <span>$20</span>
           <small>Kabel, ulagich va asosiy himoya vositalari</small>
         </div>
         <div class="cost-row">
-          <b>UPS va aksessuarlar</b>
+          <div class="cost-item">
+            <img src="assets/images/UPS.jpg" alt="UPS va aksessuarlar">
+            <b>UPS va aksessuarlar</b>
+          </div>
           <span>1 to'plam</span>
-          <span>$180-350</span>
+          <span>$100</span>
           <small>Quti, bracket, elektr va mayda jihozlar</small>
         </div>
         <div class="cost-row">
-          <b>Montaj va sozlash</b>
+          <div class="cost-item">
+            <img src="assets/images/montaj.jpg" alt="Montaj va sozlash">
+            <b>Montaj va sozlash</b>
+          </div>
           <span>1 ish</span>
-          <span>$200-450</span>
+          <span>$100</span>
           <small>O'rnatish va ishga tushirish</small>
-        </div>
-        <div class="cost-row">
-          <b>Controller integratsiyasi</b>
-          <span>1 ish</span>
-          <span>$0-800</span>
-          <small>Dastlab optional, keyin svetofor boshqaruviga ulanadi</small>
-        </div>
-        <div class="cost-row">
-          <b>Sirena moduli</b>
-          <span>1 ta</span>
-          <span>$58.9</span>
-          <small>Keyingi bosqichda tez yordam sirenasini aniqlash uchun</small>
         </div>
         <div class="cost-row total">
           <b>Jami</b>
           <span>Minimal</span>
-          <span>$1116-1536</span>
-          <small>Taxminan 14-19 mln so'm</small>
+          <span>$505</span>
+          <small>Taxminan 6-7 mln so'm</small>
         </div>
       </div>
     </section>
@@ -980,7 +908,7 @@
       </div>
       <div class="team-grid">
         <article class="team-card">
-          <div class="team-avatar">1</div>
+          <div class="team-avatar"><img src="assets/images/Azizbek.jpg" alt="Azizbek Sultonboyev"></div>
           <h3>Azizbek Sultonboyev</h3>
           <span class="team-role">Loyiha rahbari</span>
           <p>Asosiy g'oya, umumiy arxitektura, chorraha logikasi va loyiha yo'nalishini boshqarish uchun mas'ul.</p>
@@ -988,7 +916,7 @@
         </article>
 
         <article class="team-card">
-          <div class="team-avatar">2</div>
+          <div class="team-avatar"><img src="assets/images/Xudoyor.jpg" alt="Xudoyor Shonazarov"></div>
           <h3>Xudoyor Shonazarov</h3>
           <span class="team-role">AI va Computer Vision</span>
           <p>Mashina aniqlash, tracking, navbat tahlili va hodisalarni kameradan aniqlash qismini rivojlantiradi.</p>
@@ -997,7 +925,7 @@
 
 
         <article class="team-card">
-          <div class="team-avatar">3</div>
+          <div class="team-avatar"><img src="assets/images/Nodirbek.jpg" alt="Nodirbek Boltayev"></div>
           <h3>Nodirbek Boltayev</h3>
           <span class="team-role">Tahlil va smeta</span>
           <p>Xarajatlar hisobi, monetizatsiya modeli, amaliy joriy etish va dispecher bilan integratsiya rejasini ishlab chiqadi.</p>
