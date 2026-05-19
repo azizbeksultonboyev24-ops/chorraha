@@ -65,8 +65,8 @@
     .tag{padding:10px 14px;border-radius:999px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);color:var(--muted);font-size:14px}
     .hero-note{display:block;margin:-6px 0 22px;color:#c8deee;font-size:14px;letter-spacing:.02em}
     .hero-summary{
-      display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;
-      max-width:720px;margin:24px auto 0;
+      display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;
+      max-width:860px;margin:24px auto 0;
       justify-content:center
     }
     .hero-stat{
@@ -298,7 +298,7 @@
     .grid3,.grid2,.emergency,.metrics,.demo{display:grid;gap:18px}
     .grid3{grid-template-columns:repeat(4,minmax(0,1fr))}
     .grid2{grid-template-columns:minmax(0,1.08fr) minmax(320px,.92fr)}
-    .metrics{grid-template-columns:repeat(4,minmax(0,1fr));margin-top:22px}
+    .metrics{grid-template-columns:repeat(4,minmax(0,1fr));margin-top:22px;margin-bottom:44px}
     .emergency{grid-template-columns:repeat(4,minmax(0,1fr))}
     .demo{grid-template-columns:minmax(0,1.05fr) minmax(280px,.95fr);align-items:center}
     .panel{
@@ -323,7 +323,8 @@
     .demo.single-shot{grid-template-columns:1fr}
     .demo-image.prototype-shot{padding:0;background:rgba(255,255,255,.02)}
     .demo-image.prototype-shot:after{content:"PROTOTIP"}
-    .demo-image.prototype-shot img{display:block;width:100%;height:auto}
+    .demo-image.prototype-shot img{display:block;width:100%;height:auto;max-height:85vh;object-fit:contain;margin:0 auto}
+    .demo-image.certificate-shot:after{display:none}
     .dashboard{
       position:relative;display:grid;grid-template-columns:minmax(0,1.08fr) minmax(240px,.92fr);
       gap:16px;min-height:430px;padding-top:22px
@@ -402,7 +403,7 @@
     .step b{display:inline-grid;place-items:center;width:44px;height:44px;border-radius:14px;margin-bottom:16px;background:rgba(9,192,174,.16);font:700 18px/1 "Bahnschrift","Trebuchet MS",sans-serif}
     .step h3{margin:0 0 12px;font-size:18px}
     .alert-grid,.alert-strip{display:grid;gap:18px}
-    .alert-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+    .alert-grid{grid-template-columns:repeat(4,minmax(0,1fr))}
     .alert-card{
       position:relative;padding:24px;border-radius:26px;background:linear-gradient(180deg,rgba(16,31,46,.94),rgba(8,18,29,.96));
       border:1px solid rgba(255,255,255,.08);box-shadow:var(--shadow);overflow:hidden
@@ -595,7 +596,8 @@
       50%{box-shadow:0 0 18px rgba(255,100,80,.68)}
     }
     @media (max-width:1080px){
-      .hero,.grid2,.demo,.grid3,.metrics,.emergency,.alert-grid,.alert-strip,.team-grid,.cost-summary,.hero-summary{grid-template-columns:1fr}
+      .hero,.grid2,.demo,.grid3,.metrics,.emergency,.alert-grid,.alert-strip,.team-grid,.cost-summary{grid-template-columns:1fr}
+      .hero-summary{grid-template-columns:repeat(3,minmax(0,1fr))}
       .visual{min-height:740px}.screen{inset:52px 0 0 0}.scene-hud,.scene-footer,.dashboard{grid-template-columns:1fr}
       .cost-head,.cost-row{grid-template-columns:1fr}
     }
@@ -605,6 +607,7 @@
       .scene-panel b{font-size:20px}
       .scene-pill b{font-size:18px}
       .hero-stat b{font-size:26px}
+      .hero-summary{grid-template-columns:1fr}
     }
   </style>
 </head>
@@ -615,9 +618,6 @@
       <a href="#muammo">Muammo</a>
       <a href="#yechim">Yechim</a>
       <a href="#modes">AI rejimlar</a>
-      <a href="#demo">Prototip</a>
-      <a href="#emergency">Maxsus transport</a>
-      <a href="#dispatch">Ogohlantirish</a>
       <a href="#xarajatlar">Xarajatlar</a>
     </nav>
   </header>
@@ -642,7 +642,7 @@
           </div>
           <div class="hero-stat">
             <small>Chorraha Vazifalari</small>
-            <b>4</b>
+            <b>4+</b>
             <span>Kamera oqimini hisob kitib qilish, Yong'in aniqlash, Avariyani aniqlash, Uzoq vaqt turib qolgan mashinani aniqlash, Tezkor xizmat mashinalariga ustunlik qilish.</span>
           </div>
           <div class="hero-stat">
@@ -665,46 +665,27 @@
     </section>
 
     <section id="muammo" class="reveal">
-      <div class="head">
-        <span>Muammo</span>
-        <h2>An'anaviy usul</h2>
-        <p>Hozirgi ko'plab svetoforlar oldindan belgilangan vaqt bo'yicha ishlaydi. Lekin real transport oqimi doim o'zgaradi. Natijada bir yo'nalishda navbat oshadi, boshqa tomonda esa yo'l bo'sh turadi.</p>
-      </div>
-      <div class="grid3">
-        <article class="panel">
-          <img src="assets/images/probka.jpg" alt="Samarasiz signal" style="width:100%;border-radius:16px;margin-bottom:16px;object-fit:cover;height:160px">
-          <h3>Samarasiz signal</h3><p></p>
-        </article>
-        <article class="panel"><h3>Tirbandlik kuchayadi</h3><p></p></article>
-        <article class="panel"><h3>Maxsus mashinalar kechikadi</h3><p></p></article>
+      <div class="wrap">
+        <div class="head">
+          <span>Muammo</span>
+          <h2>An'anaviy usul</h2>
+          <p>Hozirgi ko'plab svetoforlar oldindan belgilangan vaqt bo'yicha ishlaydi. Lekin real transport oqimi doim o'zgaradi. Natijada bir yo'nalishda navbat oshadi, boshqa tomonda esa yo'l bo'sh turadi.</p>
+        </div>
+        <div class="grid3">
+          <article class="panel">
+            <img src="assets/images/probka 1.jpg" alt="Samarasiz signal" style="width:100%;border-radius:16px;margin-bottom:16px;object-fit:cover;height:160px">
+            <h3>Samarasiz signal</h3><p></p>
+          </article>
+          <article class="panel"><img src="assets/images/probka.jpg" alt="Tirbandlik" style="width:100%;border-radius:16px;margin-bottom:16px;object-fit:cover;height:160px"><h3>Tirbandlik kuchayadi</h3><p></p></article>
+          <article class="panel"><img src="assets/images/tez yordam.jpg" alt="Tez yordam" style="width:100%;border-radius:16px;margin-bottom:16px;object-fit:cover;height:160px"><h3>Maxsus mashinalar kechikadi</h3><p></p></article>
+        </div>
       </div>
     </section>
 
     <section id="yechim" class="reveal">
       <div class="head">
-        <span>Tizim ishlashi</span>
-        <h2>Kamera ko'radi, AI tahlil qiladi</h2>
-        <p>Loyihaning hozirgi prototipi allaqachon mashinalarni aniqlaydi va sanaydi. Endi aynan shu pipeline ustiga deformatsiya, yong'in va uzoq vaqt harakatsiz transportni aniqlovchi xavfsizlik modullari qo'shiladi.</p>
-      </div>
-      <div class="grid2">
-        <article class="panel">
-          <h3>Ishlash oqimi</h3>
-          <div class="flow">
-            <div class="flow-item"><div class="num">01</div><div><strong>Video oqim olinadi</strong><p>Kamera chorrahaning muayyan qismidagi transport holatini uzluksiz kuzatadi.</p></div></div>
-            <div class="flow-item"><div class="num">02</div><div><strong>YOLO aniqlash moduli ishlaydi</strong><p>Car, bus va truck obyektlari aniqlanib, fon va keraksiz obyektlardan ajratiladi.</p></div></div>
-            <div class="flow-item"><div class="num">03</div><div><strong>Tracking va count</strong><p>Har bir mashina ID bilan kuzatiladi va chiziqlar oralig'idagi navbat baholanadi.</p></div></div>
-            <div class="flow-item"><div class="num">04</div><div><strong>Xavfli holat triggerlari</strong><p>Deformatsiya, yong'in va uzoq to'xtash holatlari alohida qoidalar bilan tekshiriladi.</p></div></div>
-            <div class="flow-item"><div class="num">05</div><div><strong>Adaptive qaror va alert</strong><p>Natijaga qarab svetofor logikasi yoki dispecherga yuboriladigan ogohlantirish paketi ishga tushadi.</p></div></div>
-          </div>
-        </article>
-        <aside class="panel">
-          <h3>Nima uchun bu kuchli?</h3>
-          <p>Bu loyiha oddiy kuzatuv emas. U nafaqat oqimni o'lchaydi, balki chorrahadagi xavfli holatlarni ham erta sezib, boshqaruv va ogohlantirish uchun tayyor signal beradi.</p>
-          <div class="metrics">
-            <div class="metric"><b>AI</b><span>Detection va tracking orqali jonli analiz</span></div>
-            <div class="metric"><b>Flow</b><span>Navbat qayerda oshganini ko'rsatadi</span></div>
-            <div class="metric"><b>Alert</b><span>Deformatsiya, yong'in va stop-holat uchun triggerlar</span></div>
-          </div>
+     
+     
         </aside>
       </div>
     </section>
@@ -712,7 +693,7 @@
     <section id="modes" class="reveal">
       <div class="head">
         <span>Yangi AI rejimlar</span>
-        <h2>Xavfli holatlarni ham ko'radi</h2>
+        <h2>Loyiha imkoniyatlari  </h2>
         <p>Navbat tahlilidan tashqari tizim chorrahadagi uchta muhim xavf stsenariysini ham alohida ajratadi: deformatsiya bo'lgan transport, yong'in yoki tutun, va bir joyda juda uzoq turib qolgan mashina.</p>
       </div>
       <div class="alert-grid">
@@ -763,6 +744,21 @@
             <b></b>
           </div>
         </article>
+
+        <article class="alert-card">
+          <div class="alert-top">
+            <div class="alert-num">4</div>
+            <div class="alert-tag">Siren detection</div>
+          </div>
+          <div class="alert-icon photo">
+            <img src="assets/images/tez yordam.jpg" alt="Tez yordam mashinasi">
+          </div>
+          <h3>Serena aniqlash (serena va GPS orqali) </h3>
+          <div class="alert-meta">
+            <small></small>
+            <b></b>
+          </div>
+        </article>
       </div>
     </section>
 
@@ -781,31 +777,43 @@
 
     <section id="emergency" class="reveal">
       <div class="head">
-        <span>Asosiy funksiya</span>
-        <h2>Maxsus mashinalar ustunligi</h2>
-        <p>Maxsus transport yaqinlashganda tizim chorrahani xavfsiz bo'shatib, unga ustuvor yo'l yaratadi.</p>
-      </div>
-      <div class="emergency">
-        <article class="step"><b>1</b><h3>Sirena aniqlash</h3><p></p></article>
-        <article class="step"><b>2</b><h3>Yo'nalishni topish</h3><p></p></article>
-        <article class="step"><b>3</b><h3>Barchasi qizil</h3><p></p></article>
-      </div>
+   
     </section>
 
   
 
     <section class="reveal">
-      <div class="head">
-        <span>natija</span>
-        <h2>Nima beradi?</h2>
-        <p>Ushbu tizim shahar transporti uchun real foyda yaratadi: tirbandlikni kamaytiradi, kutish vaqtini qisqartiradi va favqulodda holatlarda inson hayotini saqlashga yordam beradi.</p>
+      <div class="wrap">
+        <div class="head">
+          <span>natija</span>
+          <h2>Kutilayotgan natija</h2>
+          <p>Ushbu tizim shahar transporti uchun real foyda yaratadi: tirbandlikni kamaytiradi, kutish vaqtini qisqartiradi va favqulodda holatlarda inson hayotini saqlashga yordam beradi.</p>
+        </div>
+        <div class="metrics">
+          <div class="metric">
+            <b>30–40%</b>
+            <span>Tirbandlikni kamaytiradi</span>
+          </div>
+          <div class="metric">
+            <b>25%</b>
+            <span>Kutish vaqtini qisqartiradi</span>
+          </div>
+          <div class="metric">
+            <b>15–20%</b>
+            <span>Yoqilg'i sarfini kamaytiradi</span>
+          </div>
+          <div class="metric">
+            <b>18%</b>
+            <span>CO₂ chiqindisini kamaytiradi</span>
+          </div>
+        </div>
+        <div class="grid3">
+          <article class="panel"><h3>Tirbandlik kamayadi</h3><p>Adaptiv svetofor real vaqtda transport oqimini tahlil qilib, navbatlarni muvozanatlaydi.</p></article>
+          <article class="panel"><h3>Haydovchi vaqti tejaladi</h3><p>Qizil chiroqda kutish vaqti qisqaradi, yo'lda o'tkazilgan umumiy vaqt kamayadi.</p></article>
+          <article class="panel"><h3>Maxsus mashinalar ustuvorlik oladi</h3><p>Tez yordam, o't o'chirish va boshqa favqulodda transport uchun yo'l ochiladi.</p></article>
+          <article class="panel"><h3>Ekologiya tozalanadi</h3><p>Kamroq kutish va silliq harakat yoqilg'i sarfi va zararli chiqindilarni kamaytiradi.</p></article>
+        </div>
       </div>
-      <div class="grid3">
-        <article class="panel"><h3>Tirbandlik kamayadi</h3><p></p></article>
-        <article class="panel"><h3>Haydovchi vaqti tejaladi</h3><p></p></article>
-        <article class="panel"><h3>Maxsus mashinalar ustuvorlik oladi</h3><p></p></article>
-        <article class="panel"><h3>Ekologiya tozalanadi</h3><p></p></article>
-       </div>
     </section>
 
     <section id="xarajatlar" class="reveal">
@@ -931,6 +939,21 @@
           <p>Xarajatlar hisobi, monetizatsiya modeli, amaliy joriy etish va dispecher bilan integratsiya rejasini ishlab chiqadi.</p>
           <span class="team-skill">Biznes va reja</span>
         </article>
+      </div>
+    </section>
+
+    <section id="guvohnoma" class="reveal">
+      <div class="wrap">
+        <div class="head">
+          <span>Guvohnoma</span>
+          <h2>Dasturiy guvohnoma</h2>
+          <p>Loyiha rasmiy ro'yxatdan o'tgan va intellektual mulk huquqi bilan himoyalangan.</p>
+        </div>
+        <div class="demo single-shot">
+          <div class="demo-image prototype-shot certificate-shot">
+            <img src="assets/images/Dasturiy guvohnoma.jpg" alt="Dasturiy guvohnoma" style="width:100%;height:auto;display:block;">
+          </div>
+        </div>
       </div>
     </section>
   </main>
