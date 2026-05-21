@@ -322,7 +322,7 @@
     .demo-image:after{content:"TIZIM PANELI";position:absolute;top:18px;left:18px;padding:8px 12px;border-radius:999px;background:rgba(6,17,27,.78);border:1px solid rgba(255,255,255,.1);font-size:12px;letter-spacing:.08em;color:var(--blue)}
     .demo.single-shot{grid-template-columns:1fr}
     .demo-image.prototype-shot{padding:0;background:rgba(255,255,255,.02)}
-    .demo-image.prototype-shot:after{content:"PROTOTIP"}
+    .demo-image.prototype-shot:after{display:none}
     .demo-image.prototype-shot img{display:block;width:100%;height:auto;max-height:85vh;object-fit:contain;margin:0 auto}
     .demo-image.certificate-shot:after{display:none}
     .dashboard{
@@ -625,7 +625,7 @@
   <main class="wrap">
     <section class="hero">
       <div class="reveal">
-        <div class="eyebrow">Vizual Prezentatsiya</div>
+        <div class="eyebrow">Azizbek Sultonboyev</div>
         <h1>Aqlli <span>chorraha</span> tizimi</h1>
         <p class="lead">
           Ushbu loyiha kamera va sun'iy intellekt yordamida chorrahadagi transportni aniqlaydi,
@@ -668,7 +668,7 @@
       <div class="wrap">
         <div class="head">
           <span>Muammo</span>
-          <h2>An'anaviy usul</h2>
+          <h2>Xozirgi kunda</h2>
           <p>Hozirgi ko'plab svetoforlar oldindan belgilangan vaqt bo'yicha ishlaydi. Lekin real transport oqimi doim o'zgaradi. Natijada bir yo'nalishda navbat oshadi, boshqa tomonda esa yo'l bo'sh turadi.</p>
         </div>
         <div class="grid3">
@@ -692,8 +692,8 @@
 
     <section id="modes" class="reveal">
       <div class="head">
-        <span>Yangi AI rejimlar</span>
-        <h2>Loyiha imkoniyatlari  </h2>
+        <span>imkoniyatlar</span>
+        <h2>Loyiha Yangiliklari  </h2>
         <p>Navbat tahlilidan tashqari tizim chorrahadagi uchta muhim xavf stsenariysini ham alohida ajratadi: deformatsiya bo'lgan transport, yong'in yoki tutun, va bir joyda juda uzoq turib qolgan mashina.</p>
       </div>
       <div class="alert-grid">
@@ -763,14 +763,32 @@
     </section>
 
     <section id="demo" class="reveal">
-      <div class="head">
-        <span>Prototip</span>
-        <h2>Hozirgi prototip interfeysi</h2>
-        <p>Quyida aqlli chorraha boshqaruv tizimining amaldagi prototip oynasi bevosita skrinshot ko'rinishida berilgan.</p>
-      </div>
-      <div class="demo single-shot">
-        <div class="demo-image prototype-shot">
-          <img src="assets/images/image_5.png" alt="Aqlli chorraha boshqaruv tizimi prototipi">
+      <div class="wrap">
+        <div class="head">
+          <span>Prototip</span>
+          <h2>Hozirgi prototip interfeysi</h2>
+          <p>Quyida aqlli chorraha boshqaruv tizimining amaldagi prototip oynasi bevosita skrinshot ko'rinishida berilgan.</p>
+        </div>
+        <div class="demo single-shot">
+          <div class="demo-image prototype-shot">
+            <img src="assets/images/image_5.png" alt="Aqlli chorraha boshqaruv tizimi prototipi">
+          </div>
+        </div>
+        <div class="demo" style="margin-top:24px;grid-template-columns:repeat(2,1fr)">
+          <div class="demo-image prototype-shot">
+            <img src="assets/images/image_1.jpeg" alt="Aqlli chorraha natija interfeysi">
+          </div>
+          <div class="demo-image prototype-shot">
+            <img src="assets/images/Yangi result.png" alt="Yangi natija interfeysi">
+          </div>
+        </div>
+        <div class="demo single-shot" style="margin-top:24px">
+          <div class="demo-image prototype-shot" style="padding:0;background:#000">
+            <video autoplay muted loop playsinline style="width:100%;height:auto;display:block;border-radius:28px">
+              <source src="assets/videos/namunasi.mp4" type="video/mp4">
+              Brauzeringiz video formatini qo'llab-quvvatlamaydi.
+            </video>
+          </div>
         </div>
       </div>
     </section>
@@ -791,7 +809,7 @@
         </div>
         <div class="metrics">
           <div class="metric">
-            <b>30–40%</b>
+            <b>40–50%</b>
             <span>Tirbandlikni kamaytiradi</span>
           </div>
           <div class="metric">
@@ -803,7 +821,7 @@
             <span>Yoqilg'i sarfini kamaytiradi</span>
           </div>
           <div class="metric">
-            <b>18%</b>
+            <b>20%</b>
             <span>CO₂ chiqindisini kamaytiradi</span>
           </div>
         </div>
@@ -819,7 +837,7 @@
     <section id="xarajatlar" class="reveal">
       <div class="head">
         <span>Xarajatlar</span>
-        <h2>Arzonlashtirilgan demo smeta</h2>
+        <h2>Smeta</h2>
         <p>Quyidagi jadval taqdimot va boshlang'ich sinov uchun soddalashtirilgan konfiguratsiyani ko'rsatadi. To'liq tizim keyin bosqichma-bosqich kengaytiriladi.</p>
       </div>
 
